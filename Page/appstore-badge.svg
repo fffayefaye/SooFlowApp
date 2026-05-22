@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 82" width="246" height="82" role="img" aria-label="Download on the App Store">
+  <title>Download on the App Store</title>
+
+  <!-- Background -->
+  <rect width="246" height="82" rx="14" fill="#000"/>
+  <!-- Subtle border (matches official Apple badge spec) -->
+  <rect x="0.5" y="0.5" width="245" height="81" rx="13.5" fill="none" stroke="#a6a6a6" stroke-width="1"/>
+
+  <!-- Apple Logo (white, centered left zone) -->
+  <g transform="translate(15, 21)">
+    <!-- Leaf / stem -->
+    <path d="M 20 7 C 21.2 5 22.2 2.5 21.6 1
+             C 19.5 1.5 16.8 3 15.3 4.6
+             C 13.8 6.2 13.4 8.8 14 10.2
+             C 16.1 10.1 18.7 8.9 20 7 Z"
+          fill="white"/>
+    <!-- Apple body -->
+    <path d="M 20.8 11.8
+             C 18.6 11.5 16.5 12.8 14.9 12.8
+             C 13.3 12.8 11.2 11.7 9 11.7
+             C 5.9 11.7 3.2 13.4 1.6 16.1
+             C -1.6 21.5 -1.0 29.8 2.3 34.5
+             C 3.9 36.8 6.1 39.5 9 39.4
+             C 11.7 39.3 12.8 37.7 15.4 37.7
+             C 18.0 37.7 19.0 39.4 21.8 39.3
+             C 24.6 39.2 26.8 36.5 28.4 34.2
+             C 30.0 31.9 30.5 29.4 30.6 29.2
+             C 28.0 28.1 25.8 24.9 25.9 21.2
+             C 25.9 17.8 28.6 15.8 28.9 15.5
+             C 27.2 13.0 24.4 11.9 22.2 11.9 Z"
+          fill="white"/>
+  </g>
+
+  <!-- "Download on the" -->
+  <text
+    x="65" y="34"
+    font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="12"
+    font-weight="400"
+    fill="white"
+    letter-spacing="0.3">Download on the</text>
+
+  <!-- "App Store" -->
+  <text
+    x="64" y="58"
+    font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="26"
+    font-weight="600"
+    fill="white"
+    letter-spacing="-0.4">App Store</text>
+</svg>

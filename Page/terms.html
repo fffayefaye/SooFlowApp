@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use · SooFlow</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F8F2ED;
+      --text: #925741;
+      --accent: #FF8C42;
+      --muted: rgba(146, 87, 65, 0.55);
+      --subtle: rgba(146, 87, 65, 0.12);
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Nunito', 'Noto Sans SC', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* ── Language Toggle ── */
+    .lang-toggle {
+      position: fixed;
+      top: 28px;
+      right: 40px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      z-index: 100;
+      background: rgba(248, 242, 237, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 28px;
+      padding: 4px;
+      border: 1px solid var(--subtle);
+      box-shadow: 0 2px 16px rgba(146, 87, 65, 0.08);
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: 'Nunito', 'Noto Sans SC', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 22px;
+      cursor: pointer;
+      opacity: 0.4;
+      transition: all 0.22s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .lang-btn.active {
+      opacity: 1;
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    /* ── Language Switching ── */
+    .zh, .en { display: none; }
+    html[lang="zh"] .zh { display: revert; }
+    html[lang="en"] .en { display: revert; }
+
+    /* ── Page Layout ── */
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 80px 40px 64px;
+    }
+
+    /* ── Back Link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      margin-bottom: 52px;
+      transition: color 0.2s ease, opacity 0.2s ease;
+      opacity: 0.75;
+    }
+
+    .back-link:hover { opacity: 1; color: var(--text); }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Doc Header ── */
+    .doc-header {
+      margin-bottom: 52px;
+    }
+
+    .doc-logo {
+      height: 42px;
+      width: auto;
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .doc-title {
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .doc-meta {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.7;
+    }
+
+    .doc-divider {
+      width: 36px;
+      height: 2.5px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 20px 0 0;
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .section-heading {
+      font-size: clamp(15px, 1.8vw, 17px);
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .section-body {
+      font-size: clamp(13.5px, 1.1vw, 15px);
+      font-weight: 400;
+      line-height: 1.95;
+      color: var(--muted);
+    }
+
+    .section-body p + p {
+      margin-top: 10px;
+    }
+
+    .section-body ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .section-body ul li {
+      margin-bottom: 5px;
+    }
+
+    /* ── Section Separator ── */
+    .sep {
+      border: none;
+      border-top: 1px solid var(--subtle);
+      margin: 32px 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 14px 32px 22px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      color: var(--text);
+      opacity: 0.28;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      main { padding: 72px 24px 48px; }
+      .lang-toggle { top: 20px; right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Language Toggle -->
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">ENG</button>
+  </div>
+
+  <main>
+
+    <!-- Back to Home -->
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      <span class="zh">返回首页</span>
+      <span class="en">Back to Home</span>
+    </a>
+
+    <!-- Header -->
+    <div class="doc-header">
+      <img src="sooflow-color.svg" alt="SooFlow" class="doc-logo">
+      <h1 class="doc-title">
+        <span class="zh">使用条款</span>
+        <span class="en">Terms of Use</span>
+      </h1>
+      <p class="doc-meta">
+        <span class="zh">更新日期：2026 年 3 月</span>
+        <span class="en">Last updated: March 2026</span>
+      </p>
+      <div class="doc-divider"></div>
+    </div>
+
+    <!-- 1 -->
+    <div class="section">
+      <p class="section-num">01</p>
+      <h2 class="section-heading">
+        <span class="zh">引言</span>
+        <span class="en">Introduction</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">本《使用条款》（以下简称"本条款"）由您与北京籽象科技有限公司（以下简称"Infinutshell Studio"、"我们"或"SooFlow"）订立。</p>
+        <p class="zh">本条款适用于您对 SooFlow 移动应用程序（以下简称"本应用"）及其相关服务（统称"服务"）的访问与使用。</p>
+        <p class="zh">您一旦使用本服务，即表示您已阅读、理解并同意受本条款的约束。如您不同意本条款的任何内容，请立即停止使用本服务。</p>
+        <p class="en">These Terms of Use ("Terms") are entered into by and between you and 北京籽象科技有限公司 ("Infinutshell Studio", "we", "us", or "our"), the operator of the SooFlow mobile application ("SooFlow" or the "App").</p>
+        <p class="en">These Terms govern your access to and use of SooFlow and any related services (collectively, the "Services").</p>
+        <p class="en">By using the Services, you agree to be bound by these Terms. If you do not agree, you must discontinue use immediately.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 2 -->
+    <div class="section">
+      <p class="section-num">02</p>
+      <h2 class="section-heading">
+        <span class="zh">使用资格</span>
+        <span class="en">Eligibility</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">本服务面向年满13周岁的用户。</p>
+        <p class="zh">如您未满18周岁，您应在父母或监护人的同意与指导下使用本服务。</p>
+        <p class="en">The Services are intended for users who are at least 13 years of age.</p>
+        <p class="en">If you are under 18, you must have permission from a parent or legal guardian to use the Services.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 3 -->
+    <div class="section">
+      <p class="section-num">03</p>
+      <h2 class="section-heading">
+        <span class="zh">服务使用规范</span>
+        <span class="en">Use of the Services</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">您同意仅将 SooFlow 用于个人、非商业用途。</p>
+        <p class="zh">您不得：</p>
+        <ul class="zh">
+          <li>以任何方式滥用本服务或干扰其正常运行</li>
+          <li>试图对本应用进行反向工程、反编译或修改</li>
+          <li>以任何违反适用法律法规的方式使用本服务</li>
+        </ul>
+        <p class="en">You agree to use SooFlow only for personal, non-commercial purposes.</p>
+        <p class="en">You agree not to:</p>
+        <ul class="en">
+          <li>misuse the Services or interfere with their normal operation</li>
+          <li>attempt to reverse engineer, decompile, or modify the App</li>
+          <li>use the Services in violation of any applicable laws or regulations</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 4 -->
+    <div class="section">
+      <p class="section-num">04</p>
+      <h2 class="section-heading">
+        <span class="zh">订阅与支付</span>
+        <span class="en">Subscriptions and Payments</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">SooFlow 提供基于订阅的付费功能，相关支付通过 Apple 应用内购买（In-App Purchase）完成。</p>
+        <p class="zh">所有支付均由 Apple 处理，我们不会收集、存储或访问您的支付信息。</p>
+        <p class="zh">除非您通过 Apple 账户取消订阅，否则订阅将自动续费。</p>
+        <p class="zh">订阅价格及方案可能因地区不同而有所差异，并可能不时调整。</p>
+        <p class="en">SooFlow offers subscription-based features through Apple In-App Purchases.</p>
+        <p class="en">Payments are processed by Apple. We do not collect, store, or have access to your payment information.</p>
+        <p class="en">Subscriptions automatically renew unless canceled through your Apple account settings.</p>
+        <p class="en">Pricing and subscription terms may vary by region and may change from time to time.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 5 -->
+    <div class="section">
+      <p class="section-num">05</p>
+      <h2 class="section-heading">
+        <span class="zh">退款政策</span>
+        <span class="en">Refund Policy</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">所有购买均通过 Apple 完成。</p>
+        <p class="zh">退款需依据 Apple 的相关政策申请，我们无法直接处理或提供退款。</p>
+        <p class="en">All purchases are processed through Apple.</p>
+        <p class="en">Refunds are handled by Apple in accordance with its policies. We do not have the ability to issue refunds directly.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 6 -->
+    <div class="section">
+      <p class="section-num">06</p>
+      <h2 class="section-heading">
+        <span class="zh">健康免责声明</span>
+        <span class="en">Wellness Disclaimer</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">SooFlow 提供的内容仅用于一般健康与舒缓目的，包括拉伸、放松与习惯养成。</p>
+        <p class="zh">本应用不构成医疗建议、诊断或治疗。</p>
+        <p class="zh">您应根据自身身体状况合理使用本应用。如在使用过程中出现不适、疼痛或健康问题，应立即停止并咨询专业医疗人士。</p>
+        <p class="zh">您对参与本应用中的任何活动承担全部责任。</p>
+        <p class="en">SooFlow provides guided stretching content for general wellness purposes only.</p>
+        <p class="en">It is not intended as medical advice, diagnosis, or treatment.</p>
+        <p class="en">You should exercise within your own physical limits. If you experience pain, discomfort, or have any medical concerns, you should stop immediately and consult a qualified healthcare professional.</p>
+        <p class="en">You assume full responsibility for your participation in any activities suggested by the App.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 7 -->
+    <div class="section">
+      <p class="section-num">07</p>
+      <h2 class="section-heading">
+        <span class="zh">自定义流程</span>
+        <span class="en">User-Created Flows</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">SooFlow 允许您根据自身需求选择动作、时长及部位，创建个性化拉伸流程。</p>
+        <p class="zh">您确认该等自定义流程基于您的个人选择。</p>
+        <p class="zh">对于因使用自定义流程产生的任何结果或风险，我们不承担责任。</p>
+        <p class="en">SooFlow may allow you to create customized stretching flows by selecting exercises, duration, and target areas.</p>
+        <p class="en">You acknowledge that such customized flows are based on your own choices and preferences.</p>
+        <p class="en">We are not responsible for any outcomes resulting from user-created routines.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 8 -->
+    <div class="section">
+      <p class="section-num">08</p>
+      <h2 class="section-heading">
+        <span class="zh">数据存储与可用性</span>
+        <span class="en">Data Storage and Availability</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">SooFlow 的大部分数据存储于您的本地设备。</p>
+        <p class="zh">我们不保证您的数据、进度或设置始终可被保存或恢复。</p>
+        <p class="zh">您有责任自行维护设备及相关数据备份。</p>
+        <p class="en">SooFlow primarily stores user data locally on your device.</p>
+        <p class="en">We do not guarantee that your data, progress, or settings will always be preserved.</p>
+        <p class="en">You are responsible for maintaining your own device and backups.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 9 -->
+    <div class="section">
+      <p class="section-num">09</p>
+      <h2 class="section-heading">
+        <span class="zh">服务变更</span>
+        <span class="en">Service Changes</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">我们可能随时对服务进行更新、修改或停止部分功能，恕不另行通知。</p>
+        <p class="zh">对于因此产生的服务中断或功能变化，我们不承担责任。</p>
+        <p class="en">We may update, modify, or discontinue any part of the Services at any time without prior notice.</p>
+        <p class="en">We are not liable for any interruption or loss of access resulting from such changes.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 10 -->
+    <div class="section">
+      <p class="section-num">10</p>
+      <h2 class="section-heading">
+        <span class="zh">知识产权</span>
+        <span class="en">Intellectual Property</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">本应用及其所有内容（包括但不限于文本、图像、设计、软件等）的知识产权均归 Infinutshell Studio 所有或经合法授权使用。</p>
+        <p class="zh">我们授予您一项有限的、非独占的、不可转让的使用许可，仅供个人使用。</p>
+        <p class="zh">未经我们书面许可，您不得复制、传播或商业利用本服务的任何内容。</p>
+        <p class="en">All content, features, and functionality of SooFlow, including but not limited to text, graphics, design, and software, are owned by or licensed to Infinutshell Studio.</p>
+        <p class="en">You are granted a limited, non-exclusive, non-transferable license to use the App for personal use only.</p>
+        <p class="en">You may not copy, distribute, or exploit any part of the Services without prior written permission.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 11 -->
+    <div class="section">
+      <p class="section-num">11</p>
+      <h2 class="section-heading">
+        <span class="zh">责任限制</span>
+        <span class="en">Limitation of Liability</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">在法律允许的最大范围内，对于因您使用本服务而产生的任何间接、附带或后果性损失，我们不承担责任。</p>
+        <p class="zh">在任何情况下，我们的总责任不超过您在提出相关主张前12个月内为本服务支付的金额（如有）。</p>
+        <p class="en">To the fullest extent permitted by law, we shall not be liable for any indirect, incidental, or consequential damages arising from your use of the Services.</p>
+        <p class="en">Our total liability for any claim shall not exceed the amount you paid for the Services in the twelve (12) months preceding the claim.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 12 -->
+    <div class="section">
+      <p class="section-num">12</p>
+      <h2 class="section-heading">
+        <span class="zh">服务终止</span>
+        <span class="en">Termination</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">如您违反本条款或适用法律法规，我们有权随时暂停或终止您对服务的访问。</p>
+        <p class="en">We reserve the right to suspend or terminate your access to the Services at any time if you violate these Terms or applicable laws.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 13 -->
+    <div class="section">
+      <p class="section-num">13</p>
+      <h2 class="section-heading">
+        <span class="zh">适用法律与争议解决</span>
+        <span class="en">Governing Law and Disputes</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">本条款受中华人民共和国法律管辖。</p>
+        <p class="zh">因本条款引起或与之相关的任何争议，应首先通过友好协商解决；协商不成的，应提交中国有管辖权的人民法院解决。</p>
+        <p class="en">These Terms shall be governed by the laws of the People's Republic of China.</p>
+        <p class="en">Any disputes arising out of or in connection with these Terms shall first be resolved through good-faith negotiation.</p>
+        <p class="en">If no resolution is reached, such disputes shall be submitted to a competent court in China.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 14 -->
+    <div class="section">
+      <p class="section-num">14</p>
+      <h2 class="section-heading">
+        <span class="zh">条款更新</span>
+        <span class="en">Changes to These Terms</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">我们可能不时更新本条款。</p>
+        <p class="zh">如发生重大变更，我们可能通过应用内提示或其他合理方式通知您。</p>
+        <p class="zh">您在条款更新后继续使用本服务，即视为您同意更新后的内容。</p>
+        <p class="en">We may update these Terms from time to time.</p>
+        <p class="en">If we make material changes, we may notify you through the App, website or other appropriate means.</p>
+        <p class="en">Your continued use of the Services after changes become effective constitutes your acceptance of the updated Terms.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 15 -->
+    <div class="section">
+      <p class="section-num">15</p>
+      <h2 class="section-heading">
+        <span class="zh">联系我们</span>
+        <span class="en">Contact Us</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">如您对本条款或服务有任何疑问，可通过以下方式联系我们：</p>
+        <p class="zh">邮箱：<a href="mailto:sooflow@infinutshell.studio" style="color: var(--text); font-weight: 600;">sooflow@infinutshell.studio</a></p>
+        <p class="en">If you have any questions about these Terms, you may contact us at:</p>
+        <p class="en">Email: <a href="mailto:sooflow@infinutshell.studio" style="color: var(--text); font-weight: 600;">sooflow@infinutshell.studio</a></p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>Powered by InfiNutshell Studio</footer>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+
+</body>
+</html>

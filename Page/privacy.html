@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy · SooFlow</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F8F2ED;
+      --text: #925741;
+      --accent: #FF8C42;
+      --muted: rgba(146, 87, 65, 0.55);
+      --subtle: rgba(146, 87, 65, 0.12);
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Nunito', 'Noto Sans SC', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* ── Language Toggle ── */
+    .lang-toggle {
+      position: fixed;
+      top: 28px;
+      right: 40px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      z-index: 100;
+      background: rgba(248, 242, 237, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 28px;
+      padding: 4px;
+      border: 1px solid var(--subtle);
+      box-shadow: 0 2px 16px rgba(146, 87, 65, 0.08);
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: 'Nunito', 'Noto Sans SC', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 22px;
+      cursor: pointer;
+      opacity: 0.4;
+      transition: all 0.22s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .lang-btn.active {
+      opacity: 1;
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    /* ── Language Switching ── */
+    .zh, .en { display: none; }
+    html[lang="zh"] .zh { display: revert; }
+    html[lang="en"] .en { display: revert; }
+
+    /* ── Page Layout ── */
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 80px 40px 64px;
+    }
+
+    /* ── Back Link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      margin-bottom: 52px;
+      transition: color 0.2s ease, opacity 0.2s ease;
+      opacity: 0.75;
+    }
+
+    .back-link:hover { opacity: 1; color: var(--text); }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Doc Header ── */
+    .doc-header {
+      margin-bottom: 52px;
+    }
+
+    .doc-logo {
+      height: 42px;
+      width: auto;
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .doc-title {
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .doc-meta {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.7;
+    }
+
+    .doc-divider {
+      width: 36px;
+      height: 2.5px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 20px 0 0;
+    }
+
+    /* ── Intro ── */
+    .doc-intro {
+      font-size: clamp(13.5px, 1.1vw, 15px);
+      font-weight: 400;
+      line-height: 1.95;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .section-heading {
+      font-size: clamp(15px, 1.8vw, 17px);
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .section-body {
+      font-size: clamp(13.5px, 1.1vw, 15px);
+      font-weight: 400;
+      line-height: 1.95;
+      color: var(--muted);
+    }
+
+    .section-body p + p {
+      margin-top: 10px;
+    }
+
+    .section-body ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .section-body ul li {
+      margin-bottom: 5px;
+    }
+
+    /* ── Section Separator ── */
+    .sep {
+      border: none;
+      border-top: 1px solid var(--subtle);
+      margin: 32px 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 14px 32px 22px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      color: var(--text);
+      opacity: 0.28;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      main { padding: 72px 24px 48px; }
+      .lang-toggle { top: 20px; right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Language Toggle -->
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">ENG</button>
+  </div>
+
+  <main>
+
+    <!-- Back to Home -->
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      <span class="zh">返回首页</span>
+      <span class="en">Back to Home</span>
+    </a>
+
+    <!-- Header -->
+    <div class="doc-header">
+      <img src="sooflow-color.svg" alt="SooFlow" class="doc-logo">
+      <h1 class="doc-title">
+        <span class="zh">隐私政策</span>
+        <span class="en">Privacy Policy</span>
+      </h1>
+      <p class="doc-meta">
+        <span class="zh">更新日期：2026 年 3 月</span>
+        <span class="en">Last updated: March 2026</span>
+      </p>
+      <div class="doc-divider"></div>
+    </div>
+
+    <!-- Intro -->
+    <p class="doc-intro zh">SooFlow（以下简称"我们"）非常重视您的隐私，并致力于保护您的个人信息。本隐私政策说明我们如何收集、使用和存储您在使用本应用时的信息。</p>
+    <p class="doc-intro en">SooFlow ("we", "our", or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and store information when you use our application.</p>
+
+    <!-- 1 -->
+    <div class="section">
+      <p class="section-num">01</p>
+      <h2 class="section-heading">
+        <span class="zh">我们收集的信息</span>
+        <span class="en">Information We Collect</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">目前，SooFlow 不需要用户注册账户。</p>
+        <p class="zh">我们可能收集以下信息：</p>
+        <ul class="zh">
+          <li>存储在您设备本地的使用数据（如拉伸记录、偏好设置、进度信息等）</li>
+          <li>基础设备信息（用于应用功能与优化）</li>
+        </ul>
+        <p class="zh">在未来版本中，我们可能会收集：</p>
+        <ul class="zh">
+          <li>通过 Apple 或第三方服务获取的订阅与购买信息</li>
+          <li>用于改进产品体验的使用行为数据（如分析数据）</li>
+        </ul>
+        <p class="en">Currently, SooFlow does not require account registration.</p>
+        <p class="en">We may collect and process the following types of information:</p>
+        <ul class="en">
+          <li>Usage data stored locally on your device (e.g., completed routines, preferences, progress data)</li>
+          <li>Basic device information (for app functionality and optimization)</li>
+        </ul>
+        <p class="en">In future versions, we may collect:</p>
+        <ul class="en">
+          <li>Subscription and purchase information via Apple or third-party services</li>
+          <li>Analytics data to improve product experience</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 2 -->
+    <div class="section">
+      <p class="section-num">02</p>
+      <h2 class="section-heading">
+        <span class="zh">信息的使用方式</span>
+        <span class="en">How We Use Information</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">我们使用信息用于：</p>
+        <ul class="zh">
+          <li>提供和优化应用核心功能</li>
+          <li>生成个性化拉伸流程与推荐</li>
+          <li>提升用户体验和性能表现</li>
+        </ul>
+        <p class="en">We use information to:</p>
+        <ul class="en">
+          <li>Provide and improve core app functionality</li>
+          <li>Generate personalized routines and recommendations</li>
+          <li>Enhance user experience and app performance</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 3 -->
+    <div class="section">
+      <p class="section-num">03</p>
+      <h2 class="section-heading">
+        <span class="zh">数据存储方式</span>
+        <span class="en">Data Storage</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">目前，所有用户数据均存储在您的本地设备中。</p>
+        <p class="zh">我们不会将您的个人数据上传至服务器或进行远程存储。</p>
+        <p class="zh">未来若引入云同步等功能，我们将更新本隐私政策。</p>
+        <p class="en">All user data is currently stored locally on your device.</p>
+        <p class="en">We do not upload or store your personal data on external servers at this stage.</p>
+        <p class="en">Future versions may introduce cloud-based features (such as syncing), in which case this policy will be updated accordingly.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 4 -->
+    <div class="section">
+      <p class="section-num">04</p>
+      <h2 class="section-heading">
+        <span class="zh">第三方服务</span>
+        <span class="en">Third-Party Services</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">SooFlow 可能使用以下第三方服务：</p>
+        <ul class="zh">
+          <li>Apple（用于应用内购买）</li>
+          <li>RevenueCat（用于订阅管理）</li>
+          <li>PostHog（用于数据分析）</li>
+        </ul>
+        <p class="zh">这些服务可能会根据其隐私政策收集有限信息。</p>
+        <p class="en">SooFlow may use third-party services, including:</p>
+        <ul class="en">
+          <li>Apple (in-app purchases)</li>
+          <li>RevenueCat (subscription management)</li>
+          <li>PostHog (analytics tools)</li>
+        </ul>
+        <p class="en">These services may collect limited information in accordance with their own privacy policies.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 5 -->
+    <div class="section">
+      <p class="section-num">05</p>
+      <h2 class="section-heading">
+        <span class="zh">信息共享</span>
+        <span class="en">Data Sharing</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">我们不会出售、出租或交易您的个人信息。</p>
+        <p class="zh">我们不会将您的数据用于广告追踪或商业营销。</p>
+        <p class="en">We do not sell, rent, or trade your personal information.</p>
+        <p class="en">We do not share your personal data with third parties for advertising purposes.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 6 -->
+    <div class="section">
+      <p class="section-num">06</p>
+      <h2 class="section-heading">
+        <span class="zh">用户权利</span>
+        <span class="en">User Rights</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">由于当前未使用账户系统，您的数据完全由您本地控制。</p>
+        <p class="zh">您可以通过以下方式删除数据：</p>
+        <ul class="zh">
+          <li>卸载应用</li>
+          <li>清除应用数据</li>
+        </ul>
+        <p class="en">Since SooFlow currently does not use accounts, your data is controlled locally.</p>
+        <p class="en">You may delete your data at any time by:</p>
+        <ul class="en">
+          <li>Deleting the app</li>
+          <li>Clearing app data</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 7 -->
+    <div class="section">
+      <p class="section-num">07</p>
+      <h2 class="section-heading">
+        <span class="zh">数据安全</span>
+        <span class="en">Data Security</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">我们采取合理措施保护您的数据安全。由于数据主要存储在本地，设备本身的安全性也会影响数据安全。</p>
+        <p class="en">We take reasonable measures to protect your data. Since data is stored locally, security depends partly on your device's security settings.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 8 -->
+    <div class="section">
+      <p class="section-num">08</p>
+      <h2 class="section-heading">
+        <span class="zh">政策更新</span>
+        <span class="en">Updates to This Policy</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">我们可能会不时更新本隐私政策。</p>
+        <p class="zh">更新内容将通过应用内或网站发布，继续使用本应用即表示您同意更新后的政策。</p>
+        <p class="en">We may update this Privacy Policy from time to time.</p>
+        <p class="en">Any changes will be posted within the app or on our website. Continued use of SooFlow indicates acceptance of the updated policy.</p>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <!-- 9 -->
+    <div class="section">
+      <p class="section-num">09</p>
+      <h2 class="section-heading">
+        <span class="zh">联系我们</span>
+        <span class="en">Contact</span>
+      </h2>
+      <div class="section-body">
+        <p class="zh">如有任何问题，请联系：</p>
+        <p class="zh"><a href="mailto:sooflow@infinutshell.studio" style="color: var(--text); font-weight: 600;">sooflow@infinutshell.studio</a></p>
+        <p class="en">If you have any questions about these Terms, you may contact us at:</p>
+        <p class="en">Email: <a href="mailto:sooflow@infinutshell.studio" style="color: var(--text); font-weight: 600;">sooflow@infinutshell.studio</a></p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>Powered by InfiNutshell Studio</footer>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+
+</body>
+</html>
